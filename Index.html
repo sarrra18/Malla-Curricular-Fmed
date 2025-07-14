@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Malla Curricular Medicina</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fffafc;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #d06fa7;
+}
+
+h2 {
+  color: #e08bb2;
+  border-bottom: 2px solid #f2c3d8;
+  padding-bottom: 5px;
+}
+
+.leyenda {
+  margin: 20px 0;
+  font-size: 0.9em;
+}
+
+.leyenda span {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+}
+
+.ciclo-intro { background-color: #ffe0ef; }
+.ciclo-basico { background-color: #fde2f1; }
+.ciclo-hospital { background-color: #f9d7ea; }
+.completada {
+  background-color: #c8f7c5 !important;
+  text-decoration: line-through;
+}
+
+.semestre {
+  border: 1px solid #f8bbd0;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.materia {
+  background-color: #fff0f5;
+  border: 1px solid #f8bbd0;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.requisito {
+  font-size: 0.85em;
+  color: #a65c84;
+}
+</style>
+</head>
+<body>
+
+<h1>Malla Curricular Medicina</h1>
+
+<div class="leyenda">
+  <strong>Leyenda:</strong><br>
+  <span class="ciclo-intro"></span> Ciclo de Introducción a las Ciencias de la Salud<br>
+  <span class="ciclo-basico"></span> Ciclo Básico Clínico Comunitario<br>
+  <span class="ciclo-hospital"></span> Hospital
+</div>
+
+<h2>🩷 Ciclo de Introducción a las Ciencias de la Salud</h2>
+
+<div class="semestre ciclo-intro">
+  <strong>Primer Año - Semestre 1</strong>
+  <div class="materia">Introducción a la biología celular y molecular</div>
+  <div class="materia">Introducción a la bioestadística</div>
+  <div class="materia">Salud pública y humanidades</div>
+  <div class="materia">Aprendizaje en territorio 1</div>
+</div>
+
+<div class="semestre ciclo-intro">
+  <strong>Primer Año - Semestre 2</strong>
+  <div class="materia">Biología celular y molecular 
+    <div class="requisito">Requiere: Introducción a la biología celular y molecular</div>
+  </div>
+  <div class="materia">Aprendizaje en territorio 2 
+    <div class="requisito">Requiere: Aprendizaje en territorio 1</div>
+  </div>
+</div>
+
+<h2>🩷 Ciclo Básico Clínico Comunitario</h2>
+
+<div class="semestre ciclo-basico">
+  <strong>Segundo Año - Semestre 3</strong>
+  <div class="materia">Anatomía 
+    <div class="requisito">Requiere: Salud pública y humanidades</div>
+  </div>
+  <div class="materia">Histología y Biofísica 
+    <div class="requisito">Requiere: Biología celular y molecular</div>
+  </div>
+</div>
+
+<div class="semestre ciclo-basico">
+  <strong>Segundo Año - Semestre 4</strong>
+  <div class="materia">Histología de neuro y cardio <div class="requisito">Requiere: Biología celular y molecular</div></div>
+  <div class="materia">Neurociencias <div class="requisito">Requiere: Biología celular y molecular</div></div>
+  <div class="materia">Cardiovascular y respiratorio <div class="requisito">Requiere: Biología celular y molecular</div></div>
+</div>
+
+<div class="semestre ciclo-basico">
+  <strong>Tercer Año - Semestre 5</strong>
+  <div class="materia">Digestivo renal endocrino metabólico y reproductor (DREM) 
+    <div class="requisito">Requiere: Anatomía y Biología celular y molecular</div>
+  </div>
+</div>
+
+<div class="semestre ciclo-basico">
+  <strong>Tercer Año - Semestre 6</strong>
+  <div class="materia">Hematología - Inmunobiología 
+    <div class="requisito">Requiere: Biología celular y molecular</div>
+  </div>
+  <div class="materia">Metodología científica 1 
+    <div class="requisito">Requiere: Introducción a la bioestadística + alguna materia de 2º a 5º semestre</div>
+  </div>
+</div>
+
+<h2>🩷 Hospital</h2>
+
+<div class="semestre ciclo-hospital">
+  <strong>Cuarto Año - Semestres 7 y 8</strong>
+  <div class="materia">Medicina en el primer nivel de atención <div class="requisito">Requiere: Primeros 6 semestres aprobados</div></div>
+  <div class="materia">Bases científicas de la patología <div class="requisito">Requiere: Primeros 6 semestres aprobados</div></div>
+  <div class="materia">Pediatría <div class="requisito">Requiere: Primeros 6 semestres aprobados</div></div>
+  <div class="materia">Ginecología y neonatología <div class="requisito">Requiere: Primeros 6 semestres aprobados</div></div>
+</div>
+
+<div class="semestre ciclo-hospital">
+  <strong>Quinto Año - Semestres 9 y 10</strong>
+  <div class="materia">Clínica médica 
+    <div class="requisito">Requiere: Bases científicas de la patología + Medicina en el primer nivel de atención</div>
+  </div>
+  <div class="materia">Patología médica y terapéutica 
+    <div class="requisito">Requiere: Bases científicas de la patología</div>
+  </div>
+</div>
+
+<div class="semestre ciclo-hospital">
+  <strong>Sexto Año - Semestres 11 y 12</strong>
+  <div class="materia">Clínica quirúrgica 
+    <div class="requisito">Requiere: Bases científicas de la patología + Medicina en el primer nivel de atención</div>
+  </div>
+  <div class="materia">Patología quirúrgica 
+    <div class="requisito">Requiere: Bases científicas de la patología</div>
+  </div>
+  <div class="materia">Salud mental en comunidad 
+    <div class="requisito">Requiere: Medicina en el primer nivel de atención</div>
+  </div>
+  <div class="materia">Metodología científica 2 
+    <div class="requisito">Requiere: Bases científicas de la patología + Medicina en el primer nivel de atención + al menos una de: Pediatría, Ginecología y neonatología, Clínica médica, Clínica quirúrgica, Salud mental en comunidad</div>
+  </div>
+</div>
+
+<div class="semestre ciclo-hospital">
+  <strong>Séptimo Año - Semestres 13 y 14</strong>
+  <div class="materia">Internado obligatorio 
+    <div class="requisito">Requiere: Todo el resto aprobado</div>
+  </div>
+</div>
+
+<script>
+const materias = document.querySelectorAll(".materia");
+materias.forEach(m => {
+  const key = m.textContent.trim();
+  if (localStorage.getItem(key) === "completada") {
+    m.classList.add("completada");
+  }
+
+  m.addEventListener("click", () => {
+    m.classList.toggle("completada");
+    if (m.classList.contains("completada")) {
+      localStorage.setItem(key, "completada");
+    } else {
+      localStorage.removeItem(key);
+    }
+  });
+});
+</script>
+
+</body>
+</html>
