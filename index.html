@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Malla Curricular Medicina</title>
+<title>Carrera Doctor en Medicina — Malla Curricular</title>
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -23,28 +23,6 @@ h2 {
   padding-bottom: 5px;
 }
 
-.leyenda {
-  margin: 20px 0;
-  font-size: 0.9em;
-}
-
-.leyenda span {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-  vertical-align: middle;
-  border: 1px solid #ccc;
-}
-
-.ciclo-intro { background-color: #ffe0ef; }
-.ciclo-basico { background-color: #fde2f1; }
-.ciclo-hospital { background-color: #f9d7ea; }
-.completada {
-  background-color: #c8f7c5 !important;
-  text-decoration: line-through;
-}
-
 .semestre {
   border: 1px solid #f8bbd0;
   border-radius: 8px;
@@ -53,13 +31,27 @@ h2 {
 }
 
 .materia {
-  background-color: #fff0f5;
   border: 1px solid #f8bbd0;
   padding: 8px;
   margin: 5px 0;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.completada {
+  background-color: #c8f7c5 !important;
+  text-decoration: line-through;
+  color: #666;
+}
+
+.habilitada {
+  background-color: #f8b3d0;
+}
+
+.bloqueada {
+  background-color: #eee;
+  cursor: not-allowed;
 }
 
 .requisito {
@@ -70,131 +62,146 @@ h2 {
 </head>
 <body>
 
-<h1>Malla Curricular Medicina</h1>
-
-<div class="leyenda">
-  <strong>Leyenda:</strong><br>
-  <span class="ciclo-intro"></span> Ciclo de Introducción a las Ciencias de la Salud<br>
-  <span class="ciclo-basico"></span> Ciclo Básico Clínico Comunitario<br>
-  <span class="ciclo-hospital"></span> Hospital
-</div>
+<h1>Carrera Doctor en Medicina — Malla Curricular</h1>
 
 <h2>🩷 Ciclo de Introducción a las Ciencias de la Salud</h2>
 
-<div class="semestre ciclo-intro">
+<div class="semestre">
   <strong>Primer Año - Semestre 1</strong>
-  <div class="materia">Introducción a la biología celular y molecular</div>
-  <div class="materia">Introducción a la bioestadística</div>
-  <div class="materia">Salud pública y humanidades</div>
-  <div class="materia">Aprendizaje en territorio 1</div>
-</div>
-
-<div class="semestre ciclo-intro">
-  <strong>Primer Año - Semestre 2</strong>
-  <div class="materia">Biología celular y molecular 
-    <div class="requisito">Requiere: Introducción a la biología celular y molecular</div>
-  </div>
-  <div class="materia">Aprendizaje en territorio 2 
-    <div class="requisito">Requiere: Aprendizaje en territorio 1</div>
-  </div>
+  <div class="materia" data-id="intro-biol">Introducción a la biología celular y molecular</div>
+  <div class="materia" data-id="intro-bioest">Introducción a la bioestadística</div>
+  <div class="materia" data-id="salud-publica">Salud pública y humanidades</div>
+  <div class="materia" data-id="apr-territorio-1">Aprendizaje en territorio 1</div>
 </div>
 
 <h2>🩷 Ciclo Básico Clínico Comunitario</h2>
 
-<div class="semestre ciclo-basico">
+<div class="semestre">
+  <strong>Primer Año - Semestre 2</strong>
+  <div class="materia" data-id="biol-cel">Biología celular y molecular 
+    <div class="requisito">Requiere: Introducción a la biología celular y molecular</div>
+  </div>
+  <div class="materia" data-id="apr-territorio-2">Aprendizaje en territorio 2 
+    <div class="requisito">Requiere: Aprendizaje en territorio 1</div>
+  </div>
+</div>
+
+<div class="semestre">
   <strong>Segundo Año - Semestre 3</strong>
-  <div class="materia">Anatomía 
+  <div class="materia" data-id="anatomia">Anatomía 
     <div class="requisito">Requiere: Salud pública y humanidades</div>
   </div>
-  <div class="materia">Histología y Biofísica 
+  <div class="materia" data-id="hist-biof">Histología y Biofísica 
     <div class="requisito">Requiere: Biología celular y molecular</div>
   </div>
 </div>
 
-<div class="semestre ciclo-basico">
+<div class="semestre">
   <strong>Segundo Año - Semestre 4</strong>
-  <div class="materia">Histología de neuro y cardio <div class="requisito">Requiere: Biología celular y molecular</div></div>
-  <div class="materia">Neurociencias <div class="requisito">Requiere: Biología celular y molecular</div></div>
-  <div class="materia">Cardiovascular y respiratorio <div class="requisito">Requiere: Biología celular y molecular</div></div>
+  <div class="materia" data-id="hist-neuro-cardio">Histología de neuro y cardio</div>
+  <div class="materia" data-id="neurociencias">Neurociencias</div>
+  <div class="materia" data-id="cardio-resp">Cardiovascular y respiratorio</div>
 </div>
 
-<div class="semestre ciclo-basico">
+<div class="semestre">
   <strong>Tercer Año - Semestre 5</strong>
-  <div class="materia">Digestivo renal endocrino metabólico y reproductor (DREM) 
-    <div class="requisito">Requiere: Anatomía y Biología celular y molecular</div>
-  </div>
+  <div class="materia" data-id="drem">Digestivo renal endocrino metabólico y reproductor (DREM)</div>
 </div>
 
-<div class="semestre ciclo-basico">
+<div class="semestre">
   <strong>Tercer Año - Semestre 6</strong>
-  <div class="materia">Hematología - Inmunobiología 
-    <div class="requisito">Requiere: Biología celular y molecular</div>
-  </div>
-  <div class="materia">Metodología científica 1 
-    <div class="requisito">Requiere: Introducción a la bioestadística + alguna materia de 2º a 5º semestre</div>
-  </div>
+  <div class="materia" data-id="hemato-inmuno">Hematología - Inmunobiología</div>
+  <div class="materia" data-id="metod-cient-1">Metodología científica 1</div>
 </div>
 
-<h2>🩷 Hospital</h2>
-
-<div class="semestre ciclo-hospital">
+<div class="semestre">
   <strong>Cuarto Año - Semestres 7 y 8</strong>
-  <div class="materia">Medicina en el primer nivel de atención <div class="requisito">Requiere: Primeros 6 semestres aprobados</div></div>
-  <div class="materia">Bases científicas de la patología <div class="requisito">Requiere: Primeros 6 semestres aprobados</div></div>
-  <div class="materia">Pediatría <div class="requisito">Requiere: Primeros 6 semestres aprobados</div></div>
-  <div class="materia">Ginecología y neonatología <div class="requisito">Requiere: Primeros 6 semestres aprobados</div></div>
+  <div class="materia" data-id="med-1nivel">Medicina en el primer nivel de atención</div>
+  <div class="materia" data-id="bases-patologia">Bases científicas de la patología</div>
+  <div class="materia" data-id="pediatria">Pediatría</div>
+  <div class="materia" data-id="gineco-neo">Ginecología y neonatología</div>
 </div>
 
-<div class="semestre ciclo-hospital">
+<div class="semestre">
   <strong>Quinto Año - Semestres 9 y 10</strong>
-  <div class="materia">Clínica médica 
-    <div class="requisito">Requiere: Bases científicas de la patología + Medicina en el primer nivel de atención</div>
-  </div>
-  <div class="materia">Patología médica y terapéutica 
-    <div class="requisito">Requiere: Bases científicas de la patología</div>
-  </div>
+  <div class="materia" data-id="clinica-medica">Clínica médica</div>
+  <div class="materia" data-id="patol-medica-terap">Patología médica y terapéutica</div>
 </div>
 
-<div class="semestre ciclo-hospital">
+<div class="semestre">
   <strong>Sexto Año - Semestres 11 y 12</strong>
-  <div class="materia">Clínica quirúrgica 
-    <div class="requisito">Requiere: Bases científicas de la patología + Medicina en el primer nivel de atención</div>
-  </div>
-  <div class="materia">Patología quirúrgica 
-    <div class="requisito">Requiere: Bases científicas de la patología</div>
-  </div>
-  <div class="materia">Salud mental en comunidad 
-    <div class="requisito">Requiere: Medicina en el primer nivel de atención</div>
-  </div>
-  <div class="materia">Metodología científica 2 
-    <div class="requisito">Requiere: Bases científicas de la patología + Medicina en el primer nivel de atención + al menos una de: Pediatría, Ginecología y neonatología, Clínica médica, Clínica quirúrgica, Salud mental en comunidad</div>
-  </div>
+  <div class="materia" data-id="clinica-quir">Clínica quirúrgica</div>
+  <div class="materia" data-id="patol-quir">Patología quirúrgica</div>
+  <div class="materia" data-id="salud-mental">Salud mental en comunidad</div>
+  <div class="materia" data-id="metod-cient-2">Metodología científica 2</div>
 </div>
 
-<div class="semestre ciclo-hospital">
+<h2>🩷 Internado Obligatorio</h2>
+
+<div class="semestre">
   <strong>Séptimo Año - Semestres 13 y 14</strong>
-  <div class="materia">Internado obligatorio 
-    <div class="requisito">Requiere: Todo el resto aprobado</div>
-  </div>
+  <div class="materia" data-id="internado">Internado obligatorio</div>
 </div>
 
 <script>
-const materias = document.querySelectorAll(".materia");
-materias.forEach(m => {
-  const key = m.textContent.trim();
-  if (localStorage.getItem(key) === "completada") {
-    m.classList.add("completada");
-  }
+const dependencias = {
+  "biol-cel": ["intro-biol"],
+  "apr-territorio-2": ["apr-territorio-1"],
+  "anatomia": ["salud-publica"],
+  "hist-biof": ["biol-cel"],
+  "hist-neuro-cardio": ["biol-cel"],
+  "neurociencias": ["biol-cel"],
+  "cardio-resp": ["biol-cel"],
+  "drem": ["anatomia", "biol-cel"],
+  "hemato-inmuno": ["biol-cel"],
+  "metod-cient-1": ["intro-bioest"],
+  "med-1nivel": ["anatomia", "hist-biof", "hist-neuro-cardio", "neurociencias", "cardio-resp", "drem", "hemato-inmuno", "metod-cient-1"],
+  "bases-patologia": ["anatomia", "hist-biof", "hist-neuro-cardio", "neurociencias", "cardio-resp", "drem", "hemato-inmuno", "metod-cient-1"],
+  "clinica-medica": ["med-1nivel", "bases-patologia"],
+  "patol-medica-terap": ["bases-patologia"],
+  "clinica-quir": ["med-1nivel", "bases-patologia"],
+  "patol-quir": ["bases-patologia"],
+  "salud-mental": ["med-1nivel"],
+  "metod-cient-2": ["med-1nivel", "bases-patologia"],
+  "internado": ["clinica-medica", "patol-medica-terap", "clinica-quir", "patol-quir", "salud-mental", "metod-cient-2", "pediatria", "gineco-neo"]
+};
 
-  m.addEventListener("click", () => {
-    m.classList.toggle("completada");
-    if (m.classList.contains("completada")) {
-      localStorage.setItem(key, "completada");
+const materias = document.querySelectorAll(".materia");
+
+function actualizar() {
+  materias.forEach(m => {
+    const id = m.dataset.id;
+    if (localStorage.getItem(id) === "completada") {
+      m.classList.add("completada");
+      m.classList.remove("habilitada", "bloqueada");
+      return;
+    }
+    const deps = dependencias[id] || [];
+    const completas = deps.every(d => localStorage.getItem(d) === "completada");
+    if (deps.length === 0 || completas) {
+      m.classList.add("habilitada");
+      m.classList.remove("completada", "bloqueada");
     } else {
-      localStorage.removeItem(key);
+      m.classList.add("bloqueada");
+      m.classList.remove("habilitada", "completada");
     }
   });
+}
+
+materias.forEach(m => {
+  m.addEventListener("click", () => {
+    if (!m.classList.contains("habilitada") && !m.classList.contains("completada")) return;
+    const id = m.dataset.id;
+    if (m.classList.contains("completada")) {
+      localStorage.removeItem(id);
+    } else {
+      localStorage.setItem(id, "completada");
+    }
+    actualizar();
+  });
 });
+
+actualizar();
 </script>
 
 </body>
