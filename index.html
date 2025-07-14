@@ -173,13 +173,26 @@ const materias = document.querySelectorAll(".materia");
 function actualizar() {
   materias.forEach(m => {
     const id = m.dataset.id;
+
     if (localStorage.getItem(id) === "completada") {
       m.classList.add("completada");
       m.classList.remove("habilitada", "bloqueada");
       return;
     }
+
     const deps = dependencias[id] || [];
-    const completas = deps.every(d => localStorage.getItem(d) === "completada");
+    let completas = deps.every(d => localStorage.getItem(d) === "completada");
+
+    // Regla especial para Metodología Científica 1
+    if (id === "metod-cient-1" && completas) {
+      const otras = [
+        "biol-cel", "apr-territorio-2", "anatomia", "hist-biof", 
+        "hist-neuro-cardio", "neurociencias", "cardio-resp", "drem"
+      ];
+      const alguna = otras.some(d => localStorage.getItem(d) === "completada");
+      completas = alguna;
+    }
+
     if (deps.length === 0 || completas) {
       m.classList.add("habilitada");
       m.classList.remove("completada", "bloqueada");
